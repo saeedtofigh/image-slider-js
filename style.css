@@ -1,0 +1,140 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: grid;
+    place-items: center;
+}
+.img{
+    display: none;
+    position: absolute;
+    top: 0;
+    transition: transform ease 4s;
+}
+.box{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,  max(300px));
+    position: relative;
+    overflow: scroll;
+}
+.box::-webkit-scrollbar{
+    display: none;
+}
+
+
+.img-item1{
+    background-image: url('./images/1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-item2{
+    background-image: url('./images/2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-item3{
+    background-image: url('./images/3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-item4{
+    background-image: url('./images/4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-item5{
+    background-image: url('./images/5.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-item6{
+    background-image: url('./images/6.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-item7{
+    background-image: url('./images/7.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-item8{
+    background-image: url('./images/8.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.imgs{
+    height: 300px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+body{
+    font-family: sans-serif;
+}
+.img-detail{
+    color: rgba(255, 255, 255, 0.705);
+    z-index: 99;
+    font-size: 22px;
+}
+.img-title{
+    z-index: 99;
+    color: rgba(255, 255, 255, 0.705);
+}
+@keyframes inout {
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+
+    }
+}
+@keyframes outIn {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-5);
+
+
+
+    }
+}
+
+
+.full.img{
+    transition: transform ease 4s;
+
+    width: 100%;
+    display: block;
+    animation-name: inout;
+    animation-duration: 4s;
+    border-radius: 8px;
+    box-shadow: 0 0 1px 1px #eee;
+}
+.full.imgs{
+    z-index: 99;
+    animation-name: outIn;
+    animation-duration: 4s;
+    border-radius: 8px;
+
+}
+.full.img-detail{
+    color: #fff;
+}
+.full.img-title{
+    color: #fff;
+}
+@media only screen and (max-width: 768px) {
+    .box{
+        width: 70%;
+    }
+  
+}
