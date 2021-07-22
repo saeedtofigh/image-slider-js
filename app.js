@@ -31,9 +31,7 @@ function slider() {
     })
 }
 
-if (window.innerWidth > 768) {
-    
-}
+
 
 
 

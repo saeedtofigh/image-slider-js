@@ -6,6 +6,7 @@
 .container{
     display: grid;
     place-items: center;
+    width: 100%;
 }
 .img{
     display: none;
@@ -14,9 +15,10 @@
     transition: transform ease 4s;
 }
 .box{
-    width: 90%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill,  max(300px));
+    grid-template-columns: repeat(4,  1fr);
+    grid-template-rows: repeat(2,  1fr);
     position: relative;
     overflow: scroll;
 }
@@ -27,52 +29,39 @@
 
 .img-item1{
     background-image: url('./images/1.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .img-item2{
     background-image: url('./images/2.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .img-item3{
     background-image: url('./images/3.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .img-item4{
     background-image: url('./images/4.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .img-item5{
     background-image: url('./images/5.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .img-item6{
     background-image: url('./images/6.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .img-item7{
     background-image: url('./images/7.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .img-item8{
     background-image: url('./images/8.jpg');
-    background-size: cover;
-    background-position: center;
+
 }
 .imgs{
-    height: 300px;
+    height: 360px;
     width: 100%;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
 
 }
 body{
@@ -98,10 +87,10 @@ body{
 }
 @keyframes outIn {
     0%{
-        transform: translateX(0);
+        transform: translateY(0);
     }
     100%{
-        transform: translateX(-5);
+        transform: translateY(-5);
 
 
 
@@ -111,8 +100,8 @@ body{
 
 .full.img{
     transition: transform ease 4s;
-
     width: 100%;
+    height: 100%;
     display: block;
     animation-name: inout;
     animation-duration: 4s;
@@ -132,9 +121,37 @@ body{
 .full.img-title{
     color: #fff;
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 1079px) {
+    .imgs{
+        height: 200px;}
     .box{
-        width: 70%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,  1fr);
+        grid-template-rows: repeat(2,  1fr);
+        position: relative;
+        overflow: scroll;
     }
-  
+
+}
+@media only screen and (max-width: 768px) {
+    .imgs{
+        height: 200px;}
+    .box{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,  1fr);
+        grid-template-rows: repeat(1,  1fr);
+        position: relative;
+        overflow: scroll;
+    }
+    .full.img{
+        display: none;
+
+    }
+    .full.imgs{
+        border-radius: 0;
+    
+    }
 }
